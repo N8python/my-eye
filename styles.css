@@ -1,0 +1,70 @@
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.n8-hover-big {
+  transition: 0.2s ease-in-out;
+}
+
+.n8-hover-big:hover {
+  transform: scale(1.1);
+}
+
+#sLR:hover::after {
+  content: " 😎"
+}
+
+#sUD:hover::after {
+  content: " 😊"
+}
+
+#sD:hover::after {
+  content: " 😏"
+}
+
+#tLR:hover:after {
+  content: " 😉"
+}
+
+#tUD:hover::after {
+  content: " 😄"
+}
+
+#tD:hover::after {
+  content: " 😃"
+}
+
+#C:hover::after {
+  content: " 😅"
+}
+
+#deleteB:hover::after{
+  content:" ✋"
+}
+#dif1:hover::after{
+  content:" 👀"
+}
+#dif2:hover::after{
+  content:" 👀 👀"
+}
+#dif3:hover::after{
+  content:" 👀 👀 👀"
+}
+#about:hover::after{
+  content:" 😶"
+}
+#pTips:hover::after{
+  content:" 👍"
+}
+.n8-scrollbox{
+  display: block;
+  height: 120px;
+  width: 100%;
+  overflow-x: scroll;
+}
+#routineBar {
+  overflow-x: inherit;
+}
+.w3-bar {
+  overflow: visible;
+}
