@@ -265,3 +265,27 @@ function start() {
     frame += 1;
   }, 10)
 }
+function addStarterExercises(){
+  deleteRoutine();
+  addEx('-Tracking Left-Right- ', 'traLR');
+  addEx('-Tracking Left-Right- ', 'traLR');
+  addEx('-Tracking Up-Down- ', 'traUD');
+  addEx('-Tracking Up-Down- ', 'traUD');
+  addEx('-Saccades Left-Right- ', 'sacLR');
+}
+function addMediumExercises(){
+  deleteRoutine();
+  addEx('-Tracking Left-Right- ', 'traLR');
+  addEx('-Tracking Diagonals- ', 'traD');
+  addEx('-Tracking Up-Down- ', 'traUD');
+  addEx('-Saccades Left-Right- ', 'sacLR');
+  addEx('-Saccades Up-Down- ', 'sacUD');
+}
+function addAdvancedExercises(){
+  deleteRoutine();
+  addEx('-Tracking Diagonals- ', 'traD');
+  addEx('-Saccades Left-Right- ', 'sacLR')
+  addEx('-Saccades Up-Down- ', 'sacUD');
+  addEx('-Saccades Diagonals- ', 'sacD');
+  addEx('-Convergence- ', 'conV');
+}
