@@ -36,8 +36,22 @@
   <section class="w3-bar w3-gray w3-animate-left w3-padding w3-mobile">
     <div class="n8-scrollbox">
       <p class="w3-courier w3-border w3-padding w3-zoom w3-round w3-border-black w3-leftbar w3-topbar w3-rightbar w3-bottombar w3-bar-item w3-mobile" id="routineBar">Current Routine: </p>
-      <button class="w3-btn w3-ripple w3-blue-grey w3-hover-aqua w3-animate-zoom n8-hover-big w3-bar-item w3-mobile w3-round" style="display: inline; margin-top: 24px; margin-left: 8px;" id="goButton" onclick = "start()">Go »</button>
+      <button class="w3-btn w3-ripple w3-blue-grey w3-hover-aqua w3-animate-zoom n8-hover-big w3-bar-item w3-mobile w3-round" style="display: inline; margin-top: 24px; margin-left: 8px;" id="goButton" onclick="start()">Go »</button>
       <button class="w3-bar-item w3-btn w3-ripple w3-blue-grey w3-hover-aqua w3-margin-top w3-animate-zoom w3-margin-left n8-hover-big w3-right w3-mobile w3-round" id="about" onclick="openAboutModal()">About & Info</button>
+      <br>
+      <br>
+      <br>
+      <p>Select a speed:</p>
+      <input class="w3-radio" type="radio" name="speed" value="slow" id="slowRadio">
+      <label>Slow</label>
+      <br>
+
+      <input class="w3-radio" type="radio" name="speed" value="medium" id="mediumRadio" checked>
+      <label>Medium</label>
+      <br>
+
+      <input class="w3-radio" type="radio" name="speed" value="fast" id="fastRadio">
+      <label>Fast</label>
     </div>
   </section>
   <canvas class="w3-animate-bottom w3-topbar w3-leftbar w3-bottombar w3-rightbar" id="eyeCise" height="400px"></canvas>
@@ -144,7 +158,7 @@
       </header>
       <div class="w3-container">
         <p>Each exercise has a default of 6 reps. Doubling up exercises gives you longer, 12 rep exercises.</p>
-        <p>It is recommended to keep a routine under six exercises. Two or three routines a day is good!x</p>
+        <p>It is recommended to keep a routine under six exercises. Two or three routines a day is good!</p>
         <p>Do different types of exercises each day. Tracking and Convergence go well together. Saccades works well with other
           Saccades exercises.</p>
         <p>Do exercises at least four times a week. This way, you'll see rapid improvements.</p>
@@ -159,4 +173,3 @@
 
 
 </html>
-
