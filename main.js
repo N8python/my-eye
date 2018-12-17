@@ -7,12 +7,75 @@ var startIntervalTimer;
 var currExercise = "";
 var exerciseFrame = 0;
 var exerciseNum = 0;
+var exercisesDone = 0;
+var startDate = new Date();
+var currentDate = new Date();
+var MINUTE = 60000;
 
 function drawCircle(x, y, radius) {
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, 2 * Math.PI);
   ctx.fill();
 }
+
+function Achievement(message) {
+  this.message = message;
+  this.on = true;
+  this.display = function() {
+    if (this.on) {
+      alert(message);
+    }
+  }
+}
+firstExercise = new Achievement("You've completed your first exercise! 😄 #1 😄");
+exercises5 = new Achievement("5 exercises! WOW! What persistence! Keep going! 😮😉😮")
+exercises10 = new Achievement("10 exercises! You're blowing me away! 🎉👍🎉")
+exercises25 = new Achievement("25 exercises! Oh... so many in ONE DAY! WOWOWOWOWOWOW! YOU ARE AMAZING! 😃😂😃")
+exercises50 = new Achievement("50 exercises... You've blown me away. I CAN'T BELIEVE IT! 🎉😮😃😂😃😮🎉")
+exercises100 = new Achievement("100 exercises... I've fainted from shock! (No emojis can express how impressed I am)")
+firstMinute = new Achievement("One minute of exercises - Great Job! 🕕 😊");
+minutes5 = new Achievement("5 minutes... What Persistence! 🕕 🎉👍🎉");
+minutes10 = new Achievement("10 minutes... So much practice! AMAZING WORK! 🕕🎉😮😃😂😃😮🎉");
+firstHour = new Achievement("An hour of eye practice... *faints* 🕕🕕🕕 😮")
+
+
+
+function checkAchievements() {
+  var currentDate = new Date();
+  var timeDone = currentDate - startDate;
+  if (exercisesDone === 1) {
+    firstExercise.display();
+    firstExercise.on = false;
+  } else if (exercisesDone === 5) {
+    exercises5.display();
+    exercises5.on = false;
+  } else if (exercisesDone === 10) {
+    exercises10.display();
+    exercises10.on = false;
+  } else if (exercisesDone === 25) {
+    exercises25.display();
+    exercises25.on = false;
+  } else if (exercisesDone === 50) {
+    exercises50.display();
+    exercises50.on = false;
+  } else if (exercisesDone === 100) {
+    exercises100.display();
+    exercises100.on = false;
+  } else if (timeDone>MINUTE-1 && firstMinute.on){
+    firstMinute.display();
+    firstMinute.on = false;
+  } else if (timeDone>(MINUTE*5)-1 && minutes5.on){
+    minutes5.display();
+    minutes5.on = false;
+  } else if (timeDone>(MINUTE*10)-1 && minutes10.on){
+    minutes10.display();
+    minutes10.on = false;
+  } else if (timeDone>(MINUTE*60)-1 && firstHour.on){
+    firstHour.display();
+    firstHour.on = false;
+  }
+}
+var achievementChecker = setInterval(checkAchievements, 10)
 
 
 function basicLoop() {
@@ -67,6 +130,7 @@ function decodeExereye(str) {
 }
 
 function start() {
+  document.getElementById("goButton").blur();
   currExercise = "";
   exerciseFrame = 0;
   exerciseNum = 0;
@@ -255,9 +319,11 @@ function start() {
           ctx.fillText("Next Exereye: " + decodeExereye(exerEyes[exerciseNum]), width / 2, height / 2)
           exerciseFrame++;
         } else {
+          exercisesDone++;
           exerciseFrame = 0;
         }
       } else {
+        exercisesDone++;
         exerciseFrame = 0;
       }
     }
@@ -265,7 +331,8 @@ function start() {
     frame += 1;
   }, 10)
 }
-function addStarterExercises(){
+
+function addStarterExercises() {
   deleteRoutine();
   addEx('-Tracking Left-Right- ', 'traLR');
   addEx('-Tracking Left-Right- ', 'traLR');
@@ -273,7 +340,8 @@ function addStarterExercises(){
   addEx('-Tracking Up-Down- ', 'traUD');
   addEx('-Saccades Left-Right- ', 'sacLR');
 }
-function addMediumExercises(){
+
+function addMediumExercises() {
   deleteRoutine();
   addEx('-Tracking Left-Right- ', 'traLR');
   addEx('-Tracking Diagonals- ', 'traD');
@@ -281,7 +349,8 @@ function addMediumExercises(){
   addEx('-Saccades Left-Right- ', 'sacLR');
   addEx('-Saccades Up-Down- ', 'sacUD');
 }
-function addAdvancedExercises(){
+
+function addAdvancedExercises() {
   deleteRoutine();
   addEx('-Tracking Diagonals- ', 'traD');
   addEx('-Saccades Left-Right- ', 'sacLR')
