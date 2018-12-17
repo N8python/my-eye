@@ -11,6 +11,7 @@ var exercisesDone = 0;
 var startDate = new Date();
 var currentDate = new Date();
 var MINUTE = 60000;
+var currentSpeed = 10;
 
 function drawCircle(x, y, radius) {
   ctx.beginPath();
@@ -131,6 +132,13 @@ function decodeExereye(str) {
 
 function start() {
   document.getElementById("goButton").blur();
+  if(document.getElementById("slowRadio").checked){
+    currentSpeed=15;
+  } else if (document.getElementById("mediumRadio").checked){
+    currentSpeed=10;
+  } else if (document.getElementById("fastRadio").checked){
+    currentSpeed=5;
+  }
   currExercise = "";
   exerciseFrame = 0;
   exerciseNum = 0;
@@ -329,7 +337,7 @@ function start() {
     }
 
     frame += 1;
-  }, 10)
+  }, currentSpeed)
 }
 
 function addStarterExercises() {
