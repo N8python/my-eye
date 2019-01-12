@@ -34,11 +34,11 @@ exercises10 = new Achievement("10 exercises! You're blowing me away! 🎉👍�
 exercises25 = new Achievement("25 exercises! Oh... so many in ONE DAY! WOWOWOWOWOWOW! YOU ARE AMAZING! 😃😂😃")
 exercises50 = new Achievement("50 exercises... You've blown me away. I CAN'T BELIEVE IT! 🎉😮😃😂😃😮🎉")
 exercises100 = new Achievement("100 exercises... I've fainted from shock! (No emojis can express how impressed I am)")
-firstMinute = new Achievement("One minute of exercises - Great Job! 🕕 😊");
+/*firstMinute = new Achievement("One minute of exercises - Great Job! 🕕 😊");
 minutes5 = new Achievement("5 minutes... What Persistence! 🕕 🎉👍🎉");
 minutes10 = new Achievement("10 minutes... So much practice! AMAZING WORK! 🕕🎉😮😃😂😃😮🎉");
 firstHour = new Achievement("An hour of eye practice... *faints* 🕕🕕🕕 😮")
-
+*/
 
 
 function checkAchievements() {
@@ -62,7 +62,7 @@ function checkAchievements() {
   } else if (exercisesDone === 100) {
     exercises100.display();
     exercises100.on = false;
-  } else if (timeDone>MINUTE-1 && firstMinute.on){
+  } /*else if (timeDone>MINUTE-1 && firstMinute.on){
     firstMinute.display();
     firstMinute.on = false;
   } else if (timeDone>(MINUTE*5)-1 && minutes5.on){
@@ -74,7 +74,7 @@ function checkAchievements() {
   } else if (timeDone>(MINUTE*60)-1 && firstHour.on){
     firstHour.display();
     firstHour.on = false;
-  }
+  }*/
 }
 var achievementChecker = setInterval(checkAchievements, 10)
 
